@@ -4,7 +4,7 @@ import express, {
   Response,
   NextFunction,
 } from "express";
-
+import router from "./routes/index"
 import { ApiError, InternalError } from "./core/ApiError";
 import logger from "./config/logger";
 import cors from "cors";
@@ -20,8 +20,8 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(router)
 
-// Add route logging middleware before other middleware
 app.use((req: Request, _res: Response, next: NextFunction) => {
   logger.info("Route accessed:", {
     method: req.method,
