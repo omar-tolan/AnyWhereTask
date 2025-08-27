@@ -3,7 +3,7 @@ import './App.css'
 import LoginPage from './pages/Login'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RequireAuth from './components/RequireAuth'
-import LogoutBtn from "./components/buttons/LogoutBtn"
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
           path="/"
           element={
             <RequireAuth>
-              <LogoutBtn />
+              <Dashboard />
             </RequireAuth>
           }
         />
