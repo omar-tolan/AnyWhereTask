@@ -3,7 +3,7 @@ import './App.css'
 import LoginPage from './pages/Login'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RequireAuth from './components/RequireAuth'
-import Dashboard from './pages/Dashboard'
+import Home from './pages/Home'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
           path="/"
           element={
             <RequireAuth>
-              <Dashboard />
+              <Home />
             </RequireAuth>
           }
         />

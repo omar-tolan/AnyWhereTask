@@ -1,9 +1,9 @@
 import LinksContainer from "../navigation/LinksContainer";
 import { linksMetaData } from "../../lib/config/links";
-import { useState } from "react";
+// import { useState } from "react";
 
 const SideMenu = () => {
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
   return (
     <div className="h-screen w-[15%] flex flex-col bg-gradient-to-b from-[#0B3C5D] to-[#2575A6] pt-4 pb-5 shadow-2xl">
       <div className="flex flex-col justify-center">

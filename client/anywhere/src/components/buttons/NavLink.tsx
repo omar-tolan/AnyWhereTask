@@ -7,11 +7,16 @@ const NavLink = ({
   link: ILinkMetaData;
   selected: boolean;
 }) => {
-    const primaryColor = selected?"#0B3C5D":"#FFFFFF"
-    const bgColor = selected?"bg-white":""    
+  const primaryColor = selected ? "#0B3C5D" : "#FFFFFF";
+  const bgColor = selected ? "bg-white" : "";
   return (
-    <div className={`flex items-center justify-start gap-3 p-4 cursor-pointer ${bgColor}`} onClick={() => console.log(link.link)}>
-      <link.icon className="w-10 h-10" sx={{ color: primaryColor }} />
+    <div
+      className={`flex items-center justify-start gap-3 p-4 cursor-pointer ${bgColor} ${
+        !selected && "hover:opacity-70"
+      }`}
+      onClick={() => console.log(link.link)}
+    >
+      <link.icon className="w-10 h-10" fontSize="large" sx={{ color: primaryColor }} />
       <div className={`text-lg text-[${primaryColor}]`}>{link.title}</div>
     </div>
   );
