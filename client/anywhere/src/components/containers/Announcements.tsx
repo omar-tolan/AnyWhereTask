@@ -1,22 +1,48 @@
+import Skeleton from "@mui/material/Skeleton";
 import AnnouncementCard from "../cards/AnnouncementCard";
 import CardsHeader from "../cards/CardsHeader";
 
 export type IAnnouncement = {
-    announcer: string;
-    title: string;
-    body: string;
-}
-const Announcements = ({announcements}: {announcements: IAnnouncement[]}) => {
+  announcer: string;
+  title: string;
+  body: string;
+};
+const Announcements = ({
+  announcements,
+  isLoading,
+}: {
+  announcements: IAnnouncement[];
+  isLoading: boolean;
+}) => {
   return (
     <div className="flex flex-col justify-start space-y-4 bg-white rounded-xl shadow-lg px-4 py-4 w-full h-full">
-        <CardsHeader title="Announcements"/>
-        <div className="flex flex-col space-y-4 overflow-y-auto py-2">
-            {announcements.map((announcement) => (
-                <AnnouncementCard announcement={announcement}/>
-            ))}
+      <CardsHeader title="Announcements" />
+      {isLoading ? (
+        <div className="flex flex-col space-y-2 ">
+          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton variant="rounded" width="100%" height={40} />
         </div>
+      ) : (
+        <div className="flex flex-col space-y-4 overflow-y-auto py-2">
+          {announcements.length === 0 ? (
+            <div className="flex flex-col">
+              <p className="text-lg font-normal">No Announcemnets Now</p>
+              <p className="text-md font-extralight">
+                You'll see the latest announcements here.
+              </p>
+            </div>
+          ) : (
+            announcements.map((announcement) => (
+              <AnnouncementCard key={announcement.title} announcement={announcement} />
+            ))
+          )}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Announcements
+export default Announcements;
