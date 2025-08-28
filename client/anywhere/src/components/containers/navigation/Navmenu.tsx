@@ -2,6 +2,7 @@ import Badge from "@mui/material/Badge";
 import Stack from "@mui/material/Stack";
 import { Mail, Notifications, AccountCircle } from "@mui/icons-material";
 import SearchInput from "../../inputs/SearchInput";
+import LogoutBtn from "../../buttons/LogoutBtn";
 
 const IconGradient = () => (
   <svg width="0" height="0">
@@ -29,7 +30,8 @@ const Navmenu = () => {
           <IconGradient />
           <Mail fontSize="large" sx={{ fill: "url(#iconGradient)" }} />
         </Badge>
-        <AccountCircle fontSize="large"/>
+          <AccountCircle fontSize="large" />
+          <LogoutBtn />
       </Stack>
     </div>
   );
