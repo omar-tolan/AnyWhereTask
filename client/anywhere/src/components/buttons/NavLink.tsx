@@ -12,7 +12,7 @@ const NavLink = ({
   return (
     <div
       className={`flex items-center justify-start gap-3 p-4 cursor-pointer ${bgColor} ${
-        !selected && "hover:opacity-70"
+        !selected && "hover:opacity-70 transition"
       }`}
       onClick={() => console.log(link.link)}
     >

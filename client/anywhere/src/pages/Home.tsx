@@ -3,7 +3,7 @@ import Dashboard from '../components/containers/Dashboard'
 
 const Home = () => {
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-row h-screen'>
       <SideMenu />
       <Dashboard />
     </div>
