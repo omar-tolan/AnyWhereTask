@@ -8,7 +8,7 @@ const AnnouncementCard = ({
 }) => {
   return (
     <div className="flex flex-col space-y-2 md:flex-row w-full justify-between space-x-2">
-      <div className="flex items-center space-x-2 md:min-w-[12%]">
+      <div className="flex items-center space-x-2">
         <AccountCircle fontSize="large"/>
         <div className="flex flex-col justify-start">
           <p className="text-sm font-semibold">{announcement.announcer}</p>

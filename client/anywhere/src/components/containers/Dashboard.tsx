@@ -1,9 +1,25 @@
 import Navbar from "./navigation/Navbar";
 import ExamBanner from "./ExamBanner";
-import Announcements from "./Announcements";
+import Announcements, { type IAnnouncement } from "./Announcements";
 import Exams from "./Exams";
+import { useEffect, useState } from "react";
+import fetchAnnouncements from "../../lib/data/announcements";
+import fetchExams from "../../lib/data/exams";
+import type { IExam } from "../cards/ExamCard";
 
 const Dashboard = () => {
+  const [announcementsLoading, setAnnouncementsLoading] =
+    useState<boolean>(false);
+  const [examsLoading, setExamsLoading] = useState<boolean>(false);
+  const [announcements, setAnnouncements] = useState<IAnnouncement[]>([]);
+  const [exams, setExams] = useState<IExam[]>([]);
+
+  useEffect(() => {
+    fetchAnnouncements().then((announcements) =>
+      setAnnouncements(announcements)
+    );
+    fetchExams().then((exams) => setExams(exams));
+  }, []);
   return (
     <div className="flex flex-col w-full bg-gray-200">
       <Navbar />
@@ -11,42 +27,9 @@ const Dashboard = () => {
         <ExamBanner />
         <div className="flex flex-col md:flex-row md:space-x-2 space-y-4">
           <Announcements
-            announcements={[
-              {
-                announcer: "Omar Ali Hussien",
-                title: "Math 101",
-                body: "This is a test announcement body",
-              },
-              {
-                announcer: "Ali",
-                title: "Pysics 101",
-                body: "This is a test announcement body",
-              },
-              {
-                announcer: "Mohamed",
-                title: "English 101",
-                body: "This is a test announcement body",
-              },
-            ]}
+            announcements={announcements}
           />
-          <Exams 
-            exams={[
-              {
-                title: "Math Exam",
-                topic: "Chapter One",
-                dueDate: new Date()
-              },
-              {
-                title: "Physics Exam",
-                topic: "Chapter One",
-                dueDate: new Date()
-              },
-              {
-                title: "English Exam",
-                topic: "Chapter One",
-                dueDate: new Date()
-              },
-            ]}/>
+          <Exams exams={exams} />
         </div>
       </div>
     </div>
