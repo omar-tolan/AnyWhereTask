@@ -7,13 +7,16 @@ const AnnouncementCard = ({
   announcement: IAnnouncement;
 }) => {
   return (
-    <div className="flex flex-row w-full ">
-      <div className="flex items-start">
+    <div className="flex flex-row w-full justify-between space-x-2">
+      <div className="flex items-center space-x-2 min-w-[12%]">
         <AccountCircle fontSize="large"/>
         <div className="flex flex-col justify-start">
-          <p className="text-lg">{announcement.announcer}</p>
+          <p className="text-sm font-semibold">{announcement.announcer}</p>
           <p className="text-sm font-light">{announcement.title}</p>
         </div>
+      </div>
+      <div className="w-full px-4 py-0 text-start items-center text-sm text-gray-700 border-l-1 border-gray-600">
+        <p>{announcement.body}</p>
       </div>
     </div>
   );

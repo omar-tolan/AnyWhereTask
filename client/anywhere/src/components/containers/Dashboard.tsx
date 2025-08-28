@@ -12,7 +12,7 @@ const Dashboard = () => {
           <Announcements
             announcements={[
               {
-                announcer: "Omar",
+                announcer: "Omar Ali Hussien",
                 title: "Math 101",
                 body: "This is a test announcement body",
               },
