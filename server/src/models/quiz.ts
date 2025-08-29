@@ -5,6 +5,7 @@ export interface IQuestion {
   mark: number;
 }
 export interface IQuiz extends Document {
+  title: string;
   topic: string;
   examTime: number;
   course: string;
@@ -31,6 +32,12 @@ const QuestionSchema: Schema<IQuestion> = new Schema({
 });
 
 const QuizSchema: Schema<IQuiz> = new Schema({
+    title: {
+    type: String,
+    required: true,
+    minLength: 10,
+    maxLength: 150,
+  },
   topic: {
     type: String,
     required: true,
