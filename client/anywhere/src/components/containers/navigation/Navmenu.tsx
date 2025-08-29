@@ -23,18 +23,18 @@ const Navmenu = () => {
       </div>
       <Stack spacing={2} direction="row">
         <div className="hidden md:block space-x-3">
-          <Badge badgeContent={1} color="primary">
+          <Badge badgeContent={1} color="primary" className="cursor-pointer">
             <IconGradient />
             <Notifications
               fontSize="large"
               sx={{ fill: "url(#iconGradient)" }}
             />
           </Badge>
-          <Badge badgeContent={3} color="primary">
+          <Badge badgeContent={3} color="primary" className="cursor-pointer">
             <IconGradient />
             <Mail fontSize="large" sx={{ fill: "url(#iconGradient)" }} />
           </Badge>
-          <AccountCircle fontSize="large" />
+          <AccountCircle fontSize="large" className="cursor-pointer" />
         </div>
 
         <LogoutBtn />

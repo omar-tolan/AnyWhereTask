@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div className="bg-white flex flex-row justify-between py-3 md:pl-4 md:pr-6 md:py-6 px-4">
       <button
-        className={`md:hidden ${isMenuOpen && "hidden"}`}
+        className={`md:hidden ${isMenuOpen && "hidden"} cursor-pointer`}
         onClick={toggleMenu}
       >
         <Menu />
