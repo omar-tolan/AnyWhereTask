@@ -14,19 +14,20 @@ const AnnouncementSchema: Schema<IAnnouncement> = new Schema({
   title: {
     type: String,
     required: true,
-    minLength: 10,
+    minLength: 6,
     maxLength: 100,
   },
-  body:{
+  body: {
     type: String,
     required: true,
-    minlength: 10,
+    minlength: 6,
     maxLength: 1500,
   },
   announcer: {
     type: String,
     maxLength: 20,
-    default: "Anonymous"
+    minLength: 6,
+    default: "Anonymous",
   },
   announcerImg: {
     type: String,
@@ -39,6 +40,9 @@ const AnnouncementSchema: Schema<IAnnouncement> = new Schema({
   },
 });
 
-const Announcement = mongoose.model<IAnnouncement, AnnouncementModel>("Announcement", AnnouncementSchema);
+const Announcement = mongoose.model<IAnnouncement, AnnouncementModel>(
+  "Announcement",
+  AnnouncementSchema
+);
 
 export default Announcement;

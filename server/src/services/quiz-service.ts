@@ -36,6 +36,7 @@ export class QuizsService {
   }
 
   static async createQuiz(data: {
+    title: string;
     topic: string;
     examTime: number;
     course: string;
@@ -45,6 +46,7 @@ export class QuizsService {
   }): Promise<IQuiz> {
 
     const QuizBody: Partial<IQuiz> = {
+      title: data.title,
       topic: data.topic,
       examTime: data.examTime,
       course: data.course,
