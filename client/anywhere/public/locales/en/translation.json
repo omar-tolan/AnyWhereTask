@@ -1,0 +1,34 @@
+{
+  "navlinks": {
+    "Dashboard": "Dashboard",
+    "Schedule": "Schedule",
+    "Courses": "Courses",
+    "Gradebook": "Gradebook",
+    "Performance": "Performance",
+    "Announcement": "Announcement"
+  },
+  "login": {
+    "welcomeBack": "Welcome Back!",
+    "loginDescription": "Login to start using Coligo",
+    "loginButton": "Login",
+    "signingIn": "Signing in..."
+  },
+  "navigation": {
+    "welcome": "Welcome Talia,",
+    "menu": "menu",
+    "logout": "Logout",
+    "search": "Search"
+  },
+  "exam": {
+    "examsTime": "Exams Time",
+    "examDescription": "Here we are, Are you ready to fight? Don't worry we prepared some tips to be ready for your exams.",
+    "einsteinQuote": "\"Nothing happens until something moves\" -Albert Einstein",
+    "viewExamTips": "View exam tips",
+    "startExam": "Start Exam"
+  },
+  "common": {
+    "all": "All",
+    "announcementHeader": "Announcements",
+    "examsHeader": "What's due"
+  }
+}

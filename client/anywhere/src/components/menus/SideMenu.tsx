@@ -1,5 +1,4 @@
 import LinksContainer from "../navigation/LinksContainer";
-import { linksMetaData } from "../../lib/config/links";
 import { useMenu } from "../../context/SideMenuContext";
 import { Close } from "@mui/icons-material";
 
@@ -35,7 +34,7 @@ const SideMenu = () => {
         </div>
 
         <div className="mt-8">
-          <LinksContainer links={linksMetaData} />
+          <LinksContainer />
         </div>
       </div>
     </>

@@ -1,9 +1,12 @@
-import type { ILinkMetaData } from "../../lib/config/links";
 import NavLink from "../buttons/NavLink";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { getLinksMetaData } from "../../lib/config/links";
 
-const LinksContainer = ({ links }: { links: ILinkMetaData[] }) => {
+const LinksContainer = () => {
   const [selectedLink, setSelectedLink] = useState("");
+  const { t } = useTranslation();
+  const links = getLinksMetaData(t);
   return (
     <div className="flex flex-col">
       {links.map((link) => (

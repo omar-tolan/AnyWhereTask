@@ -1,0 +1,34 @@
+{
+  "navlinks": {
+    "Dashboard": "Instrumententafel",
+    "Schedule": "Zeitplan",
+    "Courses": "Kurse",
+    "Gradebook": "Notenbuch",
+    "Performance": "Leistung",
+    "Announcement": "Ankündigungen"
+  },
+  "login": {
+    "welcomeBack": "Willkommen zurück!",
+    "loginDescription": "Melde dich an, um Coligo zu nutzen",
+    "loginButton": "Anmelden",
+    "signingIn": "Anmeldung läuft..."
+  },
+  "navigation": {
+    "welcome": "Hallo Talia,",
+    "menu": "Menü",
+    "logout": "Abmelden",
+    "search": "Suche"
+  },
+  "exam": {
+    "examsTime": "Prüfungszeit",
+    "examDescription": "Hier sind wir, bist du bereit zu kämpfen? Keine Sorge, wir haben ein paar Tipps vorbereitet, damit du auf deine Prüfungen vorbereitet bist.",
+    "einsteinQuote": "\"Nichts geschieht, bis etwas sich bewegt\" - Albert Einstein",
+    "viewExamTips": "Prüfungstipps anzeigen",
+    "startExam": "Prüfung starten"
+  },
+  "common": {
+    "all": "Alle",
+    "announcementHeader": "Ankündigungen",
+    "examsHeader": "Fällige Termine"
+  }
+}

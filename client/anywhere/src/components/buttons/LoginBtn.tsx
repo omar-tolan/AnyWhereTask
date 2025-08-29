@@ -2,8 +2,10 @@ import LoginIcon from "@mui/icons-material/Login";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/authSlice";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LoginBtn = ({ className }: { className?: string }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClick = () => {
@@ -17,7 +19,7 @@ const LoginBtn = ({ className }: { className?: string }) => {
         onClick={handleClick}
       >
         <LoginIcon className="mr-2" />
-        Login
+        {t('login.loginButton')}
       </button>
     </div>
   );

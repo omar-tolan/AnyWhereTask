@@ -13,34 +13,34 @@ export type ILinkMetaData = {
   link: string;
 };
 
-export const linksMetaData: ILinkMetaData[] = [
+export const getLinksMetaData = (t: (key: string) => string): ILinkMetaData[] => [
   {
-    title: "Dashboard",
+    title: t("navlinks.Dashboard"),
     icon: Home,
     link: "/dashboard",
   },
   {
-    title: "Schedule",
+    title: t("navlinks.Schedule"),
     icon: CalendarMonth,
     link: "/schedule",
   },
   {
-    title: "Courses",
+    title: t("navlinks.Courses"),
     icon: LocalLibrary,
     link: "/courses",
   },
   {
-    title: "Gradebook",
+    title: t("navlinks.Gradebook"),
     icon: School,
     link: "/gradebook",
   },
   {
-    title: "Performance",
+    title: t("navlinks.Performance"),
     icon: TrendingUp,
     link: "/performance",
   },
   {
-    title: "Announcement",
+    title: t("navlinks.Announcement"),
     icon: Campaign,
     link: "/announcement",
   },

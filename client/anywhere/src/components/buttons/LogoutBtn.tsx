@@ -1,8 +1,10 @@
 import LoginIcon from "@mui/icons-material/Login";
 import { useDispatch } from "react-redux";
 import { logout } from "../../features/authSlice";
+import { useTranslation } from "react-i18next";
 
 const LogoutBtn = ({ className }: { className?: string }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(logout());
@@ -14,7 +16,7 @@ const LogoutBtn = ({ className }: { className?: string }) => {
         onClick={handleClick}
       >
         <LoginIcon className="mr-2" />
-        Logout
+        {t('navigation.logout')}
       </button>
     </div>
   );
