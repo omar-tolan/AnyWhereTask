@@ -15,15 +15,15 @@ const Announcements = ({
   isLoading: boolean;
 }) => {
   return (
-    <div className="flex flex-col justify-start space-y-4 bg-white rounded-xl shadow-lg px-4 py-4 w-full h-full">
+    <div data-testid="AnnouncementsList" className="flex flex-col justify-start space-y-4 bg-white rounded-xl shadow-lg px-4 py-4 w-full h-full">
       <CardsHeader title="Announcements" />
       {isLoading ? (
         <div className="flex flex-col space-y-2 ">
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
         </div>
       ) : (
         <div className="flex flex-col space-y-4 overflow-y-auto py-2">

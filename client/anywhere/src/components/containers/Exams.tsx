@@ -5,15 +5,15 @@ import ExamCard from "../cards/ExamCard";
 
 const Exams = ({ exams, isLoading }: { exams: IExam[], isLoading: boolean }) => {
   return (
-    <div className="flex flex-col justify-start space-y-4 bg-white rounded-xl shadow-lg px-4 py-4 md:w-[40%] h-full w-full">
+    <div data-testid="ExamsList" className="flex flex-col justify-start space-y-4 bg-white rounded-xl shadow-lg px-4 py-4 md:w-[40%] h-full w-full">
       <CardsHeader title="What's due" />
         {isLoading ? (
         <div className="flex flex-col space-y-2 ">
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
-          <Skeleton variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
         </div>
       ) : (
       <div className="flex flex-col space-y-4">

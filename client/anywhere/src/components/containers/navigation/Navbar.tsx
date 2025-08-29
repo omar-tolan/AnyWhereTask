@@ -9,6 +9,7 @@ const NavBar = () => {
       <button
         className={`lg:hidden ${isMenuOpen && "hidden"} cursor-pointer`}
         onClick={toggleMenu}
+        aria-label="menu"
       >
         <Menu />
       </button>

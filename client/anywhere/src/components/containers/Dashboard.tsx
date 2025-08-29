@@ -15,18 +15,27 @@ const Dashboard = () => {
   const [exams, setExams] = useState<IExam[]>([]);
 
   useEffect(() => {
-    setAnnouncementsLoading(true);
-    setExamsLoading(true);
-    fetchAnnouncements().then((announcements) =>
-      setAnnouncements(announcements)
-    );
-    fetchExams().then((exams) => setExams(exams));
-    setAnnouncementsLoading(false);
-    setExamsLoading(false);
+    const loadData = async () => {
+      setAnnouncementsLoading(true);
+      setExamsLoading(true);
+      try {
+        const [fetchedAnnouncements, fetchedExams] = await Promise.all([
+          fetchAnnouncements(),
+          fetchExams(),
+        ]);
+        setAnnouncements(fetchedAnnouncements);
+        setExams(fetchedExams);
+      } finally {
+        setAnnouncementsLoading(false);
+        setExamsLoading(false);
+      }
+    };
+    loadData();
   }, []);
+
   return (
     <div className="flex flex-col w-full bg-gray-200">
-      <Navbar/>
+      <Navbar />
       <div className="py-4 px-3 h-full space-y-4 overflow-y-auto">
         <ExamBanner />
         <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
