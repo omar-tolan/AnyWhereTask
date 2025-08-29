@@ -26,7 +26,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="flex flex-col w-full bg-gray-200">
-      <Navbar />
+      <Navbar/>
       <div className="py-4 px-3 h-full space-y-4 overflow-y-auto">
         <ExamBanner />
         <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">

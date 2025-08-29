@@ -10,7 +10,7 @@ const LogoutBtn = ({ className }: { className?: string }) => {
   return (
     <div className={className}>
       <button
-        className="bg-blue-300 text-white rounded-md p-2 hover:opacity-90 cursor-pointer"
+        className="bg-blue-800 text-white rounded-md p-2 hover:opacity-90 cursor-pointer"
         onClick={handleClick}
       >
         <LoginIcon className="mr-2" />

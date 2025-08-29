@@ -22,16 +22,22 @@ const Navmenu = () => {
         <SearchInput />
       </div>
       <Stack spacing={2} direction="row">
-        <Badge badgeContent={1} color="primary">
-          <IconGradient />
-          <Notifications fontSize="large" sx={{ fill: "url(#iconGradient)" }} />
-        </Badge>
-        <Badge badgeContent={3} color="primary">
-          <IconGradient />
-          <Mail fontSize="large" sx={{ fill: "url(#iconGradient)" }} />
-        </Badge>
+        <div className="hidden md:block space-x-3">
+          <Badge badgeContent={1} color="primary">
+            <IconGradient />
+            <Notifications
+              fontSize="large"
+              sx={{ fill: "url(#iconGradient)" }}
+            />
+          </Badge>
+          <Badge badgeContent={3} color="primary">
+            <IconGradient />
+            <Mail fontSize="large" sx={{ fill: "url(#iconGradient)" }} />
+          </Badge>
           <AccountCircle fontSize="large" />
-          <LogoutBtn />
+        </div>
+
+        <LogoutBtn />
       </Stack>
     </div>
   );

@@ -1,18 +1,39 @@
 import LinksContainer from "../navigation/LinksContainer";
 import { linksMetaData } from "../../lib/config/links";
-// import { useState } from "react";
+import { useMenu } from "../../context/SideMenuContext";
+import { Close } from "@mui/icons-material";
 
 const SideMenu = () => {
-    // const [open, setOpen] = useState(false);
+  const { isMenuOpen, toggleMenu } = useMenu();
+
   return (
-    <div className="hidden md:flex w-[15%] flex-col bg-gradient-to-b from-[#0B3C5D] to-[#2575A6] pt-4 pb-5 shadow-2xl">
-      <div className="flex flex-col justify-center">
-        <h1 className="text-3xl text-center font-bold text-white mt-5">Coligo</h1>
+    <>
+      {isMenuOpen && (
+        <div
+          onClick={toggleMenu}
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+        />
+      )}
+
+      <div
+        className={`fixed top-0 left-0 h-full z-50 w-64 md:w-[15%] flex flex-col
+          bg-gradient-to-b from-[#0B3C5D] to-[#2575A6] pt-6 pb-5 shadow-2xl
+          transform transition-transform duration-300 ease-in-out
+          ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} 
+          md:translate-x-0 md:static`}
+      >
+        <div className="flex items-center justify-between px-4">
+          <h1 className="text-3xl font-bold text-white">Coligo</h1>
+          <button className="md:hidden cursor-pointer" onClick={toggleMenu}>
+            <Close sx={{ color: "white" }} />
+          </button>
+        </div>
+
         <div className="mt-8">
-            <LinksContainer links={linksMetaData}/>
+          <LinksContainer links={linksMetaData} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
