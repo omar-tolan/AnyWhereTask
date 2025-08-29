@@ -22,7 +22,7 @@ const Navmenu = () => {
         <SearchInput />
       </div>
       <Stack spacing={2} direction="row">
-        <div className="hidden md:block space-x-3">
+        <div className="hidden lg:block space-x-3">
           <Badge badgeContent={1} color="primary" className="cursor-pointer">
             <IconGradient />
             <Notifications
