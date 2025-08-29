@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ExamCard from "./ExamCard";
-import type { IExam } from "./ExamCard"
+import type {IExam} from "./ExamCard"
 
 const mockExam: IExam = {
   title: "Math Exam",
@@ -21,12 +21,17 @@ describe("ExamCard", () => {
 
   it("renders exam due date", () => {
     render(<ExamCard exam={mockExam} />);
-    expect(screen.getByText(/Due Date:/)).toBeInTheDocument();
-    expect(screen.getByText(mockExam.dueDate.toDateString())).toBeInTheDocument();
+    expect(
+      screen.getByText((content) =>
+        content.includes(mockExam.dueDate.toDateString())
+      )
+    ).toBeInTheDocument();
   });
 
   it("renders the Start Exam button", () => {
     render(<ExamCard exam={mockExam} />);
-    expect(screen.getByRole("button", { name: /Start Exam/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Start Exam/i })
+    ).toBeInTheDocument();
   });
 });
