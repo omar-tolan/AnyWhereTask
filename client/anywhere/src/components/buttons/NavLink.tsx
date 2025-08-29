@@ -12,6 +12,7 @@ const NavLink = ({
 
   return (
     <div
+      data-testid={`navlink-${link.title}`}
       className={`flex items-center justify-start gap-3 p-4 cursor-pointer ${bgColor} ${
         !selected && "hover:opacity-70 transition"
       }`}

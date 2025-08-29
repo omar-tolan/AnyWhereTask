@@ -9,11 +9,11 @@ const Exams = ({ exams, isLoading }: { exams: IExam[], isLoading: boolean }) => 
       <CardsHeader title="What's due" />
         {isLoading ? (
         <div className="flex flex-col space-y-2 ">
-          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
-          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
-          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
-          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
-          <Skeleton data-testid="skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="exams-skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="exams-skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="exams-skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="exams-skeleton" variant="rounded" width="100%" height={40} />
+          <Skeleton data-testid="exams-skeleton" variant="rounded" width="100%" height={40} />
         </div>
       ) : (
       <div className="flex flex-col space-y-4">

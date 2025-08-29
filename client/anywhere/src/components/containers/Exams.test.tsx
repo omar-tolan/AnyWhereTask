@@ -21,7 +21,7 @@ describe("Exams", () => {
 
   it("renders skeletons when loading", () => {
     render(<Exams exams={[]} isLoading={true} />);
-    expect(screen.getAllByTestId("skeleton")).toHaveLength(5);
+    expect(screen.getAllByTestId("exams-skeleton")).toHaveLength(5);
   });
 
   it("renders empty state when no exams", () => {

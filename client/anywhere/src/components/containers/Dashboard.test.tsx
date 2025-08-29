@@ -46,6 +46,7 @@ describe("Dashboard", () => {
 
     // Assuming skeletons have a testid of "skeleton"
     expect(screen.getAllByTestId("skeleton")).toHaveLength(5);
+    expect(screen.getAllByTestId("exams-skeleton")).toHaveLength(5);
 
     await waitFor(() => {
       expect(screen.getByTestId("AnnouncementsList")).toBeInTheDocument();

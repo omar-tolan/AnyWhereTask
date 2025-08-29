@@ -12,6 +12,7 @@ const SideMenu = () => {
         <div
           onClick={toggleMenu}
           className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+          data-testid="menu-overlay"
         />
       )}
 
@@ -24,7 +25,11 @@ const SideMenu = () => {
       >
         <div className="flex items-center justify-between px-4">
           <h1 className="text-3xl font-bold text-white">Coligo</h1>
-          <button className="lg:hidden cursor-pointer" onClick={toggleMenu}>
+          <button
+            data-testid="menu-close-btn"
+            className="lg:hidden cursor-pointer"
+            onClick={toggleMenu}
+          >
             <Close sx={{ color: "white" }} />
           </button>
         </div>
